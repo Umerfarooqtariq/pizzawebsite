@@ -1,0 +1,1238 @@
+{
+  "settings": {
+    "name": "Pizza Crunch",
+    "tagline": "Crunch Into Happiness",
+    "logo": "/images/logo.png",
+    "discountPercent": 20,
+    "phone": "",
+    "phones": [],
+    "whatsapp": "",
+    "address": "",
+    "hours": "Open daily, 11:00 AM to 3:00 AM",
+    "mapQuery": "",
+    "facebook": "https://www.facebook.com/PizzaCrunchRwp",
+    "instagram": "https://www.instagram.com/pizzacrunchrwp/",
+    "tiktok": "https://www.tiktok.com/@pizzacrunch",
+    "foodpanda": "https://www.foodpanda.pk/restaurant/xybi/pizza-crunch",
+    "followers": "574 followers",
+    "following": "6 following",
+    "bio": "Pizza, pasta, loaded fries, zinger burgers and rolls. Crown crust and stuffed crust. Fresh, cheesy, crispy, delicious. Your cravings, our specialty.",
+    "about": "Pizza Crunch fires pizzas with fresh dough, a long cheese pull, and a crust that stays crunchy. Crown crust and stuffed crust are on the menu, with fajita and tikka pizzas, zinger burgers, paratha rolls, baked pasta, and loaded fries.\\n\\nDeals are built for the table. Build your own pizza, add it to the cart, and send the full order on WhatsApp.\\n\\nAdd the shop address, phone numbers, and map from the staff menu editor. Those details stay on your computer until you choose to publish them.",
+    "splashEnabled": true,
+    "splashImage": "/images/banner-fire.jpg",
+    "adminUserHash": "",
+    "adminPassHash": ""
+  },
+  "categories": [
+    {
+      "id": "deals",
+      "name": "Value Deals",
+      "kicker": "Save more",
+      "title": "Value Deals",
+      "subtitle": "Complete meals from the Pizza Crunch menu. One tap adds the deal to your cart."
+    },
+    {
+      "id": "pizza",
+      "name": "Pizza Flavors",
+      "kicker": "The main event",
+      "title": "Pizza Flavors",
+      "subtitle": "Choose a flavour, then set the crust, the size, and any extra toppings."
+    },
+    {
+      "id": "burgers",
+      "name": "Burgers",
+      "kicker": "Stacked hot",
+      "title": "Burgers",
+      "subtitle": "Crispy fillets, tikka, and grilled stacks. Straight into the cart."
+    },
+    {
+      "id": "rolls",
+      "name": "Rolls",
+      "kicker": "Wrapped to go",
+      "title": "Rolls",
+      "subtitle": "Paratha rolls filled, sauced, and ready."
+    },
+    {
+      "id": "wraps",
+      "name": "Pizza Wrap",
+      "kicker": "Folded fresh",
+      "title": "Pizza Wrap",
+      "subtitle": "Add wraps here from the menu editor and they will show up on the home page."
+    },
+    {
+      "id": "pasta",
+      "name": "Pasta",
+      "kicker": "Creamy and baked",
+      "title": "Pasta",
+      "subtitle": "Pick regular, medium, or large."
+    },
+    {
+      "id": "snacks",
+      "name": "Snack Box",
+      "kicker": "For the table",
+      "title": "Snack Box",
+      "subtitle": "Add snack boxes from the menu editor when you want them on the site."
+    },
+    {
+      "id": "sidelines",
+      "name": "Sidelines",
+      "kicker": "Do not skip",
+      "title": "Sidelines",
+      "subtitle": "Fries, hotshots, and grilled chicken."
+    },
+    {
+      "id": "sweets",
+      "name": "Sweet Somethings",
+      "kicker": "After the crust",
+      "title": "Sweet Somethings",
+      "subtitle": "Add desserts from the menu editor and this section appears."
+    },
+    {
+      "id": "dips",
+      "name": "Dips",
+      "kicker": "On the side",
+      "title": "Dips",
+      "subtitle": "Add sauces and dips from the menu editor any time."
+    },
+    {
+      "id": "drinks",
+      "name": "Beverages",
+      "kicker": "Ice cold",
+      "title": "Beverages",
+      "subtitle": "Add drinks from the menu editor and they join the menu."
+    }
+  ],
+  "items": [
+    {
+      "popular": false,
+      "description": "6 inch pizza and Cola Next 350 ml",
+      "image": "/images/combo.jpg",
+      "kind": "simple",
+      "id": "pizza-deal-1",
+      "name": "Pizza Deal 1",
+      "categoryId": "deals",
+      "price": 710
+    },
+    {
+      "popular": false,
+      "description": "9 inch regular pizza and Cola Next 500 ml",
+      "image": "/images/crown.jpg",
+      "kind": "simple",
+      "id": "pizza-deal-2",
+      "name": "Pizza Deal 2",
+      "categoryId": "deals",
+      "price": 1290
+    },
+    {
+      "popular": false,
+      "description": "13 inch large pizza, 6 pieces garlic bread and Cola Next 1.5 liter",
+      "image": "/images/burger.jpg",
+      "kind": "simple",
+      "id": "pizza-deal-3",
+      "name": "Pizza Deal 3",
+      "categoryId": "deals",
+      "price": 2350
+    },
+    {
+      "popular": false,
+      "description": "11 inch medium crown crust pizza, 6 pieces garlic bread and Cola Next 1.5 liter",
+      "image": "/images/burger-fries.jpg",
+      "kind": "simple",
+      "id": "pizza-deal-4",
+      "name": "Pizza Deal 4",
+      "categoryId": "deals",
+      "price": 2130
+    },
+    {
+      "popular": false,
+      "description": "Two 9 inch regular pizzas and Cola Next 1.5 liter",
+      "image": "/images/pasta.png",
+      "kind": "simple",
+      "id": "pizza-deal-5",
+      "name": "Pizza Deal 5",
+      "categoryId": "deals",
+      "price": 2450
+    },
+    {
+      "popular": false,
+      "description": "Two 11 inch medium pizzas and Cola Next 1.5 liter",
+      "image": "/images/roll.jpg",
+      "kind": "simple",
+      "id": "pizza-deal-6",
+      "name": "Pizza Deal 6",
+      "categoryId": "deals",
+      "price": 2990
+    },
+    {
+      "popular": false,
+      "description": "Two 13 inch large pizzas and Cola Next 1.5 liter",
+      "image": "/images/banner-happiness.png",
+      "kind": "simple",
+      "id": "pizza-deal-7",
+      "name": "Pizza Deal 7",
+      "categoryId": "deals",
+      "price": 3550
+    },
+    {
+      "popular": false,
+      "description": "Zinger burger, regular fries and Cola Next 350 ml",
+      "image": "/images/rolls.jpg",
+      "kind": "simple",
+      "id": "burger-deal-1",
+      "name": "Burger Deal 1",
+      "categoryId": "deals",
+      "price": 670
+    },
+    {
+      "popular": false,
+      "description": "2 zinger burgers, regular fries and two Cola Next 350 ml",
+      "image": "/images/banner-fresh.jpg",
+      "kind": "simple",
+      "id": "burger-deal-3",
+      "name": "Burger Deal 3",
+      "categoryId": "deals",
+      "price": 1199
+    },
+    {
+      "popular": false,
+      "description": "4 zinger burgers and Cola Next 1.5 liter",
+      "image": "/images/banner-fire.jpg",
+      "kind": "simple",
+      "id": "burger-deal-5",
+      "name": "Burger Deal 5",
+      "categoryId": "deals",
+      "price": 1800
+    },
+    {
+      "popular": false,
+      "description": "6 zinger burgers, 3 regular fries and Cola Next 1.5 liter",
+      "image": "/images/combo.jpg",
+      "kind": "simple",
+      "id": "burger-deal-6",
+      "name": "Burger Deal 6",
+      "categoryId": "deals",
+      "price": 3150
+    },
+    {
+      "popular": false,
+      "description": "Zinger burger, 6 inch pizza and Cola Next 500 ml",
+      "image": "/images/crown.jpg",
+      "kind": "simple",
+      "id": "pizza-burger-deal-1",
+      "name": "Pizza & Burger Deal 1",
+      "categoryId": "deals",
+      "price": 1060
+    },
+    {
+      "popular": false,
+      "description": "9 inch pizza, 2 zinger burgers, large fries and Cola Next 1.5 liter",
+      "image": "/images/burger.jpg",
+      "kind": "simple",
+      "id": "pizza-burger-deal-2",
+      "name": "Pizza & Burger Deal 2",
+      "categoryId": "deals",
+      "price": 2260
+    },
+    {
+      "popular": false,
+      "description": "4 zinger burgers, 11 inch medium pizza and Cola Next 1.5 liter",
+      "image": "/images/burger-fries.jpg",
+      "kind": "simple",
+      "id": "pizza-burger-deal-3",
+      "name": "Pizza & Burger Deal 3",
+      "categoryId": "deals",
+      "price": 3250
+    },
+    {
+      "popular": false,
+      "description": "Regular chicken baked pasta and Cola Next 350 ml",
+      "image": "/images/pasta.png",
+      "kind": "simple",
+      "id": "pasta-deal-1",
+      "name": "Pasta Deal 1",
+      "categoryId": "deals",
+      "price": 650
+    },
+    {
+      "popular": false,
+      "description": "Medium chicken baked pasta and 2 Cola Next 350 ml",
+      "image": "/images/roll.jpg",
+      "kind": "simple",
+      "id": "pasta-deal-2",
+      "name": "Pasta Deal 2",
+      "categoryId": "deals",
+      "price": 999
+    },
+    {
+      "popular": false,
+      "description": "Mexican sandwich and Cola Next 500 ml",
+      "image": "/images/banner-happiness.png",
+      "kind": "simple",
+      "id": "sandwich-deal-1",
+      "name": "Sandwich Deal 1",
+      "categoryId": "deals",
+      "price": 740
+    },
+    {
+      "popular": false,
+      "description": "Pizza stacker and Cola Next 500 ml",
+      "image": "/images/rolls.jpg",
+      "kind": "simple",
+      "id": "sandwich-deal-2",
+      "name": "Sandwich Deal 2",
+      "categoryId": "deals",
+      "price": 780
+    },
+    {
+      "popular": false,
+      "description": "9 inch regular pizza, medium chicken chow mein and Cola Next 1.5 liter",
+      "image": "/images/banner-fresh.jpg",
+      "kind": "simple",
+      "id": "chinese-deal",
+      "name": "Chinese Deal",
+      "categoryId": "deals",
+      "price": 1850
+    },
+    {
+      "popular": false,
+      "description": "Smoked pizza with a drink",
+      "image": "/images/banner-fire.jpg",
+      "kind": "simple",
+      "id": "midnight-deal",
+      "name": "Midnight Deal",
+      "categoryId": "deals",
+      "price": 699
+    },
+    {
+      "popular": false,
+      "description": "6 inch pizza, regular pasta and 500 ml soft drink",
+      "image": "/images/combo.jpg",
+      "kind": "simple",
+      "id": "festive-deal-1",
+      "name": "Festive Deal 1",
+      "categoryId": "deals",
+      "price": 1450
+    },
+    {
+      "popular": false,
+      "description": "Zinger burger, 6 inch pizza and 500 ml soft drink",
+      "image": "/images/crown.jpg",
+      "kind": "simple",
+      "id": "festive-deal-2",
+      "name": "Festive Deal 2",
+      "categoryId": "deals",
+      "price": 1250
+    },
+    {
+      "popular": false,
+      "description": "Zinger burger, 6 inch pizza and 500 ml soft drink",
+      "image": "/images/burger.jpg",
+      "kind": "simple",
+      "id": "favorite-combo-1",
+      "name": "Favorite Combo 1",
+      "categoryId": "deals",
+      "price": 1250
+    },
+    {
+      "popular": false,
+      "description": "Two 9 inch pizzas and a 1.5 liter soft drink",
+      "image": "/images/burger-fries.jpg",
+      "kind": "simple",
+      "id": "favorite-combo-2",
+      "name": "Favorite Combo 2",
+      "categoryId": "deals",
+      "price": 2750
+    },
+    {
+      "popular": false,
+      "description": "Regular pizza and 1 litre soft drink",
+      "image": "/images/pasta.png",
+      "kind": "simple",
+      "id": "exclusive-pizza-deal",
+      "name": "Exclusive Pizza Deal",
+      "categoryId": "deals",
+      "price": 1060
+    },
+    {
+      "popular": false,
+      "description": "13 inch large pizza with a free 6 inch pizza and 1.5 litre drink",
+      "image": "/images/roll.jpg",
+      "kind": "simple",
+      "id": "festive-feast",
+      "name": "Festive Feast",
+      "categoryId": "deals",
+      "price": 3190
+    },
+    {
+      "popular": false,
+      "description": "2 zinger or grill burgers, 2 pieces of chicken, large fries and 2 regular soft drinks",
+      "image": "/images/banner-happiness.png",
+      "kind": "simple",
+      "id": "sharing-deal",
+      "name": "Sharing Deal",
+      "categoryId": "deals",
+      "price": 1890
+    },
+    {
+      "popular": false,
+      "description": "Zinger or grill burger, 6 inch pizza and 500 ml soft drink",
+      "image": "/images/rolls.jpg",
+      "kind": "simple",
+      "id": "burger-pizza-deal",
+      "name": "Burger Pizza Deal",
+      "categoryId": "deals",
+      "price": 1300
+    },
+    {
+      "popular": false,
+      "description": "4 zinger or tikka burgers, medium 11 inch pizza and 1.5 litre soft drink",
+      "image": "/images/banner-fresh.jpg",
+      "kind": "simple",
+      "id": "family-deal-2",
+      "name": "Family Deal 2",
+      "categoryId": "deals",
+      "price": 3750
+    },
+    {
+      "popular": false,
+      "description": "Zinger or grill burger, regular fries and 500 ml soft drink",
+      "image": "/images/banner-fire.jpg",
+      "kind": "simple",
+      "id": "solo-meal-deal",
+      "name": "Solo Meal Deal",
+      "categoryId": "deals",
+      "price": 790
+    },
+    {
+      "popular": false,
+      "description": "4 zinger burgers with a 1.5 liter drink",
+      "image": "/images/combo.jpg",
+      "kind": "simple",
+      "id": "four-zinger-deal",
+      "name": "Four Zinger Deal",
+      "categoryId": "deals",
+      "price": 2090
+    },
+    {
+      "popular": false,
+      "description": "4 zinger and tikka burgers, 4 chicken pieces, 2 large fries and 1.5 litre soft drink",
+      "image": "/images/crown.jpg",
+      "kind": "simple",
+      "id": "family-deal-1",
+      "name": "Family Deal 1",
+      "categoryId": "deals",
+      "price": 3590
+    },
+    {
+      "popular": false,
+      "description": "Chicken burger, fries, juice and chocolate",
+      "image": "/images/burger.jpg",
+      "kind": "simple",
+      "id": "kids-meal",
+      "name": "Kids Meal",
+      "categoryId": "deals",
+      "price": 730
+    },
+    {
+      "popular": false,
+      "description": "Chicken leg piece, paratha, chutney and raita",
+      "image": "/images/burger-fries.jpg",
+      "kind": "simple",
+      "id": "chicken-leg-deal",
+      "name": "Chicken Leg Deal",
+      "categoryId": "deals",
+      "price": 250
+    },
+    {
+      "popular": true,
+      "description": "Smoked chicken, mozzarella, and vegetables on a crisp crust.",
+      "image": "/images/banner-fire.jpg",
+      "kind": "pizza",
+      "id": "smoked-chicken",
+      "name": "Smoked Chicken",
+      "categoryId": "pizza",
+      "price": 590,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 590
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 1350
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 1700
+        },
+        {
+          "id": "extra-large",
+          "name": "Extra Large",
+          "price": 1950
+        },
+        {
+          "id": "jumbo",
+          "name": "Jumbo",
+          "price": 2200
+        }
+      ]
+    },
+    {
+      "popular": false,
+      "description": "Chicken, pineapple, mushrooms, olives, capsicum, and melted cheese.",
+      "image": "/images/combo.jpg",
+      "kind": "pizza",
+      "id": "hawaiian",
+      "name": "Hawaiian",
+      "categoryId": "pizza",
+      "price": 590,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 590
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 1350
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 1700
+        },
+        {
+          "id": "extra-large",
+          "name": "Extra Large",
+          "price": 1950
+        },
+        {
+          "id": "jumbo",
+          "name": "Jumbo",
+          "price": 2200
+        }
+      ]
+    },
+    {
+      "popular": false,
+      "description": "Savoury sausage, melted cheese, and a blend of seasonings on a baked crust.",
+      "image": "/images/banner-fresh.jpg",
+      "kind": "pizza",
+      "id": "sausage",
+      "name": "Sausage",
+      "categoryId": "pizza",
+      "price": 590,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 590
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 1350
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 1700
+        },
+        {
+          "id": "extra-large",
+          "name": "Extra Large",
+          "price": 1950
+        },
+        {
+          "id": "jumbo",
+          "name": "Jumbo",
+          "price": 2200
+        }
+      ]
+    },
+    {
+      "popular": false,
+      "description": "Chicken sausages, mortadella, mushrooms, olives, capsicum, and melted cheese.",
+      "image": "/images/banner-classic.jpg",
+      "kind": "pizza",
+      "id": "four-season",
+      "name": "Four Season",
+      "categoryId": "pizza",
+      "price": 590,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 590
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 1350
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 1700
+        },
+        {
+          "id": "extra-large",
+          "name": "Extra Large",
+          "price": 1950
+        },
+        {
+          "id": "jumbo",
+          "name": "Jumbo",
+          "price": 2200
+        }
+      ]
+    },
+    {
+      "popular": true,
+      "description": "Hot juicy BBQ tikka pieces on a bed of cheesy crust.",
+      "image": "/images/banner-fire.jpg",
+      "kind": "pizza",
+      "id": "bbq-tikka",
+      "name": "Bar B.Q Tikka",
+      "categoryId": "pizza",
+      "price": 590,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 590
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 1350
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 1700
+        },
+        {
+          "id": "extra-large",
+          "name": "Extra Large",
+          "price": 1950
+        },
+        {
+          "id": "jumbo",
+          "name": "Jumbo",
+          "price": 2200
+        }
+      ]
+    },
+    {
+      "popular": false,
+      "description": "Chicken, sweet corn, jalapenos, mushrooms, olives, capsicum, and melted cheese.",
+      "image": "/images/banner-happiness.png",
+      "kind": "pizza",
+      "id": "pizza-crunch-special",
+      "name": "Pizza Crunch Special",
+      "categoryId": "pizza",
+      "price": 620,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 620
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 1420
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 1790
+        },
+        {
+          "id": "extra-large",
+          "name": "Extra Large",
+          "price": 2050
+        },
+        {
+          "id": "jumbo",
+          "name": "Jumbo",
+          "price": 2310
+        }
+      ]
+    },
+    {
+      "popular": true,
+      "description": "Tender chicken, vibrant peppers, and melted cheese on a crisp crust.",
+      "image": "/images/combo.jpg",
+      "kind": "pizza",
+      "id": "chicken-fajita",
+      "name": "Chicken Fajita",
+      "categoryId": "pizza",
+      "price": 590,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 590
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 1350
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 1700
+        },
+        {
+          "id": "extra-large",
+          "name": "Extra Large",
+          "price": 1950
+        },
+        {
+          "id": "jumbo",
+          "name": "Jumbo",
+          "price": 2200
+        }
+      ]
+    },
+    {
+      "popular": false,
+      "description": "Fresh vegetables and melted cheese on a crisp crust.",
+      "image": "/images/banner-happiness.png",
+      "kind": "pizza",
+      "id": "vegetarian-delight",
+      "name": "Vegetarian Delight",
+      "categoryId": "pizza",
+      "price": 550,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 550
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 1260
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 1580
+        },
+        {
+          "id": "extra-large",
+          "name": "Extra Large",
+          "price": 1820
+        },
+        {
+          "id": "jumbo",
+          "name": "Jumbo",
+          "price": 2050
+        }
+      ]
+    },
+    {
+      "popular": false,
+      "description": "Cheesy goodness over a crunchy crust and a layer of pizza sauce.",
+      "image": "/images/banner-classic.jpg",
+      "kind": "pizza",
+      "id": "cheese-lovers",
+      "name": "Cheese Lovers",
+      "categoryId": "pizza",
+      "price": 550,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 550
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 1260
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 1580
+        },
+        {
+          "id": "extra-large",
+          "name": "Extra Large",
+          "price": 1820
+        },
+        {
+          "id": "jumbo",
+          "name": "Jumbo",
+          "price": 2050
+        }
+      ]
+    },
+    {
+      "popular": false,
+      "description": "Grilled chicken and veggies, finished with our special sauce.",
+      "image": "/images/combo.jpg",
+      "kind": "pizza",
+      "id": "grilled-chicken-pizza",
+      "name": "Grilled Chicken Pizza",
+      "categoryId": "pizza",
+      "price": 590,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 590
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 1350
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 1700
+        },
+        {
+          "id": "extra-large",
+          "name": "Extra Large",
+          "price": 1950
+        },
+        {
+          "id": "jumbo",
+          "name": "Jumbo",
+          "price": 2200
+        }
+      ]
+    },
+    {
+      "popular": true,
+      "description": "A crispy crown of melted mozzarella baked into the edge of the dough.",
+      "image": "/images/crown.jpg",
+      "kind": "pizza",
+      "id": "crown-crust",
+      "name": "Crown Crust",
+      "categoryId": "pizza",
+      "price": 1250,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 1250
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 1500
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 1900
+        },
+        {
+          "id": "extra-large",
+          "name": "Extra Large",
+          "price": 2200
+        },
+        {
+          "id": "jumbo",
+          "name": "Jumbo",
+          "price": 2500
+        }
+      ]
+    },
+    {
+      "popular": false,
+      "description": "Juicy grilled patty, melted cheese, and fresh toppings in a soft bun.",
+      "image": "/images/burger.jpg",
+      "kind": "simple",
+      "id": "grilled-burger",
+      "name": "Grilled Burger",
+      "categoryId": "burgers",
+      "price": 530
+    },
+    {
+      "popular": false,
+      "description": "Crispy chicken fillet with creamy sauce in a soft bun.",
+      "image": "/images/burger-fries.jpg",
+      "kind": "simple",
+      "id": "zinger-burger",
+      "name": "Zinger Burger",
+      "categoryId": "burgers",
+      "price": 390
+    },
+    {
+      "popular": false,
+      "description": "Crunchy, spicy chicken fillet, seasoned for a hot bite.",
+      "image": "/images/burger.jpg",
+      "kind": "simple",
+      "id": "spicy-burger",
+      "name": "Spicy Burger",
+      "categoryId": "burgers",
+      "price": 460
+    },
+    {
+      "popular": false,
+      "description": "Golden crispy chicken fillet, seasoned and stacked.",
+      "image": "/images/burger-fries.jpg",
+      "kind": "simple",
+      "id": "crispy-burger",
+      "name": "Crispy Burger",
+      "categoryId": "burgers",
+      "price": 460
+    },
+    {
+      "popular": true,
+      "description": "Juicy chicken marinated in bold tikka spices.",
+      "image": "/images/burger.jpg",
+      "kind": "simple",
+      "id": "mighty-tikka-burger",
+      "name": "Mighty Tikka Burger",
+      "categoryId": "burgers",
+      "price": 550
+    },
+    {
+      "popular": false,
+      "description": "A crispy chicken fillet wrapped in a soft paratha.",
+      "image": "/images/roll.jpg",
+      "kind": "simple",
+      "id": "zinger-roll",
+      "name": "Zinger Roll",
+      "categoryId": "rolls",
+      "price": 400
+    },
+    {
+      "popular": false,
+      "description": "Grilled chicken wrapped in a fresh paratha.",
+      "image": "/images/rolls.jpg",
+      "kind": "simple",
+      "id": "grilled-roll",
+      "name": "Grilled Roll",
+      "categoryId": "rolls",
+      "price": 540
+    },
+    {
+      "popular": false,
+      "description": "Saucy BBQ tikka chicken in a paratha.",
+      "image": "/images/roll.jpg",
+      "kind": "simple",
+      "id": "bbq-tikka-roll",
+      "name": "BBQ Tikka Roll",
+      "categoryId": "rolls",
+      "price": 400
+    },
+    {
+      "popular": false,
+      "description": "Chicken and secret sauces wrapped tight.",
+      "image": "/images/rolls.jpg",
+      "kind": "simple",
+      "id": "shawarma-roll",
+      "name": "Shawarma Roll",
+      "categoryId": "rolls",
+      "price": 190
+    },
+    {
+      "popular": false,
+      "description": "A soft roll filled with creamy garlic mayo.",
+      "image": "/images/roll.jpg",
+      "kind": "simple",
+      "id": "garlic-mayo-roll",
+      "name": "Garlic Mayo Roll",
+      "categoryId": "rolls",
+      "price": 540
+    },
+    {
+      "popular": false,
+      "description": "Single serve zinger roll.",
+      "image": "/images/rolls.jpg",
+      "kind": "simple",
+      "id": "zinger-roll-single",
+      "name": "Zinger Roll Single",
+      "categoryId": "rolls",
+      "price": 540
+    },
+    {
+      "popular": true,
+      "description": "Tender chicken tossed with pasta and baked in a rich, savoury sauce.",
+      "image": "/images/pasta.png",
+      "kind": "sized",
+      "id": "chicken-baked-pasta",
+      "name": "Chicken Baked Pasta",
+      "categoryId": "pasta",
+      "price": 500,
+      "sizes": [
+        {
+          "id": "regular",
+          "name": "Regular",
+          "price": 500
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 700
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 850
+        }
+      ]
+    },
+    {
+      "popular": false,
+      "description": "Pasta loaded with fresh vegetables in a rich, savoury sauce.",
+      "image": "/images/pasta.png",
+      "kind": "sized",
+      "id": "vegetarian-pasta",
+      "name": "Vegetarian Pasta",
+      "categoryId": "pasta",
+      "price": 500,
+      "sizes": [
+        {
+          "id": "regular",
+          "name": "Regular",
+          "price": 500
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 700
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 850
+        }
+      ]
+    },
+    {
+      "popular": false,
+      "description": "Creamy alfredo sauce tossed through pasta.",
+      "image": "/images/pasta.png",
+      "kind": "sized",
+      "id": "alfredo-pasta",
+      "name": "Alfredo Pasta",
+      "categoryId": "pasta",
+      "price": 500,
+      "sizes": [
+        {
+          "id": "regular",
+          "name": "Regular",
+          "price": 500
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 700
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 850
+        }
+      ]
+    },
+    {
+      "popular": false,
+      "description": "Crisp fries finished with chilli mayo.",
+      "image": "/images/burger-fries.jpg",
+      "kind": "simple",
+      "id": "chilli-mayo-fries",
+      "name": "Chilli Mayo Fries",
+      "categoryId": "sidelines",
+      "price": 250
+    },
+    {
+      "popular": false,
+      "description": "Fries with a hot, tangy BBQ sauce.",
+      "image": "/images/burger-fries.jpg",
+      "kind": "simple",
+      "id": "bbq-fries",
+      "name": "BBQ Hot Sauce Fries",
+      "categoryId": "sidelines",
+      "price": 250
+    },
+    {
+      "popular": false,
+      "description": "Fries coated in peri peri seasoning.",
+      "image": "/images/burger-fries.jpg",
+      "kind": "simple",
+      "id": "peri-peri-fries",
+      "name": "Peri Peri Fries",
+      "categoryId": "sidelines",
+      "price": 250
+    },
+    {
+      "popular": false,
+      "description": "Fries with a creamy garlic mayo kick.",
+      "image": "/images/burger-fries.jpg",
+      "kind": "simple",
+      "id": "garlic-mayo-fries",
+      "name": "Garlic Mayo Fries",
+      "categoryId": "sidelines",
+      "price": 250
+    },
+    {
+      "popular": false,
+      "description": "Crispy chicken pieces with a bold, spicy crust.",
+      "image": "/images/banner-fresh.jpg",
+      "kind": "simple",
+      "id": "hotshots-5",
+      "name": "Hotshots 5 Pieces",
+      "categoryId": "sidelines",
+      "price": 300
+    },
+    {
+      "popular": false,
+      "description": "A larger box of crispy, spicy chicken pieces.",
+      "image": "/images/banner-fresh.jpg",
+      "kind": "simple",
+      "id": "hotshots-10",
+      "name": "Hotshots 10 Pieces",
+      "categoryId": "sidelines",
+      "price": 580
+    },
+    {
+      "popular": false,
+      "description": "Grilled chicken for the table. Serves 1 to 5.",
+      "image": "/images/banner-fresh.jpg",
+      "kind": "simple",
+      "id": "grilled-chicken",
+      "name": "Grilled Chicken",
+      "categoryId": "sidelines",
+      "price": 430
+    }
+  ],
+  "crusts": [
+    {
+      "id": "hand-tossed",
+      "name": "Hand-tossed",
+      "price": 0
+    },
+    {
+      "id": "pan",
+      "name": "Pan",
+      "price": 0
+    },
+    {
+      "id": "thin",
+      "name": "Thin",
+      "price": 0
+    },
+    {
+      "id": "stuffed",
+      "name": "Stuffed Crust",
+      "price": 250
+    },
+    {
+      "id": "crown",
+      "name": "Crown Crust",
+      "price": 400
+    }
+  ],
+  "toppings": [
+    {
+      "id": "none",
+      "name": "None",
+      "price": 0
+    },
+    {
+      "id": "cheese",
+      "name": "Extra Cheese",
+      "price": 150
+    },
+    {
+      "id": "chicken",
+      "name": "Extra Chicken",
+      "price": 200
+    },
+    {
+      "id": "olives",
+      "name": "Olives",
+      "price": 100
+    },
+    {
+      "id": "capsicum",
+      "name": "Capsicum",
+      "price": 80
+    }
+  ],
+  "banners": [
+    {
+      "id": "fire",
+      "image": "/images/banner-fire.jpg",
+      "kicker": "Pizza Crunch",
+      "title": "Crunch Into Happiness",
+      "subtitle": "Fresh dough, a long cheese pull, and a crust you can hear."
+    },
+    {
+      "id": "collage",
+      "image": "/images/banner-fresh.jpg",
+      "kicker": "Made fresh",
+      "title": "Fresh Ingredients. Better Pizza.",
+      "subtitle": "Pizzas, rolls, burgers, pasta, and fries from one kitchen."
+    },
+    {
+      "id": "deal",
+      "image": "/images/banner-fire.jpg",
+      "kicker": "On the board",
+      "title": "Deals Worth Sharing",
+      "subtitle": "Scroll on. Every deal is priced, pictured, and ready to order."
+    },
+    {
+      "id": "zinger",
+      "image": "/images/burger-fries.jpg",
+      "kicker": "Late night",
+      "title": "Zinger, Fries, Done.",
+      "subtitle": "Burgers and sides for the drive, the hostel, and the house."
+    },
+    {
+      "id": "hours",
+      "image": "/images/banner-happiness.png",
+      "kicker": "Open late",
+      "title": "Open Till 3 AM",
+      "subtitle": "Every day, 11:00 AM to 3:00 AM. Free home delivery on the board."
+    }
+  ],
+  "posts": [
+    {
+      "id": "p1",
+      "image": "/images/banner-fire.jpg",
+      "caption": "Crunch into happiness",
+      "url": "https://www.instagram.com/pizzacrunchrwp/"
+    },
+    {
+      "id": "p2",
+      "image": "/images/banner-fire.jpg",
+      "caption": "New year pizza deal",
+      "url": "https://www.facebook.com/PizzaCrunchRwp"
+    },
+    {
+      "id": "p3",
+      "image": "/images/burger-fries.jpg",
+      "caption": "Three zingers, one tray",
+      "url": "https://www.facebook.com/PizzaCrunchRwp"
+    },
+    {
+      "id": "p4",
+      "image": "/images/banner-fresh.jpg",
+      "caption": "Fresh ingredients, better pizza",
+      "url": "https://www.instagram.com/pizzacrunchrwp/"
+    },
+    {
+      "id": "p5",
+      "image": "/images/crown.jpg",
+      "caption": "Crown crust nights",
+      "url": "https://www.tiktok.com/@pizzacrunch"
+    }
+  ]
+}

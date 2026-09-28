@@ -1,0 +1,216 @@
+@if (ready) {
+  <div class="admin-wrap">
+    <div style="display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap;">
+      <div>
+        <p class="kicker">Staff</p>
+        <h1 style="font-size:56px;">Menu editor</h1>
+      </div>
+      <button type="button" class="btn-ghost" (click)="logout()">Log out</button>
+    </div>
+    <div class="admin-help">
+      <strong>Changes save in this browser only.</strong>
+      Customers still see the old menu until you download the backup and put that file on Netlify.
+      Replace <code>public/data/store.json</code> with the downloaded file, upload the site again, and the new prices, items, and photos go live.
+      @if (store.override()) { <p class="warn">This browser has edits that are not in the deployed file yet.</p> }
+    </div>
+
+    <div class="admin-tabs">
+      <button type="button" class="admin-tab" [class.on]="tab() === 'shop'" (click)="tab.set('shop')">Shop</button>
+      <button type="button" class="admin-tab" [class.on]="tab() === 'menu'" (click)="tab.set('menu')">Menu</button>
+      <button type="button" class="admin-tab" [class.on]="tab() === 'banners'" (click)="tab.set('banners')">Banners</button>
+      <button type="button" class="admin-tab" [class.on]="tab() === 'options'" (click)="tab.set('options')">Crust & toppings</button>
+      <button type="button" class="admin-tab" [class.on]="tab() === 'backup'" (click)="tab.set('backup')">Backup</button>
+    </div>
+
+    @if (tab() === 'shop') {
+      <form class="form-grid panel" (ngSubmit)="saveShop()">
+        <label>Flat discount % (0 to 90)
+          <input type="number" name="discount" min="0" max="90" [ngModel]="shop.discountPercent" (ngModelChange)="setDiscount($event)">
+        </label>
+        <p class="hint">Every item shows this percent off, with the old price crossed out. 20 matches the current foodpanda rate. Set 10, or 0 to show full prices.</p>
+        <label>Shop name<input name="name" [(ngModel)]="shop.name"></label>
+        <label>Tagline<input name="tagline" [(ngModel)]="shop.tagline"></label>
+        <label>Logo
+          <input type="file" accept="image/*" (change)="logoImage($event)">
+        </label>
+        @if (shop.logo) { <img [src]="shop.logo" alt="" style="width:72px; height:72px; border-radius:50%; object-fit:cover;"> }
+        <label>Main phone<input name="phone" [(ngModel)]="shop.phone"></label>
+        <label>All phones, one per line<textarea name="phones" [(ngModel)]="phonesText"></textarea></label>
+        <label>WhatsApp number (country code, no +)<input name="wa" [(ngModel)]="shop.whatsapp"></label>
+        <label>Address<textarea name="address" [(ngModel)]="shop.address"></textarea></label>
+        <label>Hours<input name="hours" [(ngModel)]="shop.hours"></label>
+        <label>Map search<input name="map" [(ngModel)]="shop.mapQuery"></label>
+        <label>Facebook<input name="fb" [(ngModel)]="shop.facebook"></label>
+        <label>Instagram<input name="ig" [(ngModel)]="shop.instagram"></label>
+        <label>TikTok<input name="tt" [(ngModel)]="shop.tiktok"></label>
+        <label>foodpanda<input name="fp" [(ngModel)]="shop.foodpanda"></label>
+        <label>Followers text<input name="followers" [(ngModel)]="shop.followers"></label>
+        <label>Following text<input name="following" [(ngModel)]="shop.following"></label>
+        <label>Short bio<textarea name="bio" [(ngModel)]="shop.bio"></textarea></label>
+        <label>About us<textarea name="about" [(ngModel)]="shop.about" style="min-height:180px;"></textarea></label>
+        <label>New username (leave blank to keep)<input name="newuser" [(ngModel)]="newUser" autocomplete="off"></label>
+        <label>New password (leave blank to keep)<input name="newpass" type="password" [(ngModel)]="newPass" autocomplete="new-password"></label>
+        <button class="btn-gold" type="submit">Save shop settings</button>
+      </form>
+    }
+
+    @if (tab() === 'menu') {
+      <div class="panel" style="margin-bottom:12px;">
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <input [(ngModel)]="newCategory" name="newcat" placeholder="New section name">
+          <button type="button" class="btn-gold" (click)="addCategory()">Add section</button>
+          <button type="button" class="btn-ghost" (click)="saveSections()">Save section text</button>
+        </div>
+        @for (category of categories; track category.id; let i = $index) {
+          <div class="admin-row">
+            <div class="form-grid" style="flex:1;">
+              <input [(ngModel)]="category.name" [name]="'cn' + i" placeholder="Menu name">
+              <input [(ngModel)]="category.title" [name]="'ct' + i" placeholder="Heading">
+              <input [(ngModel)]="category.subtitle" [name]="'cs' + i" placeholder="Subtitle">
+            </div>
+            <div class="row-actions">
+              <button type="button" class="btn-ghost" (click)="moveCategory(i, -1)">Up</button>
+              <button type="button" class="btn-ghost" (click)="moveCategory(i, 1)">Down</button>
+              <button type="button" class="btn-ghost" (click)="removeCategory(category.id)">Delete</button>
+            </div>
+          </div>
+        }
+      </div>
+
+      <div style="display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap;">
+        <select [(ngModel)]="filter" name="filter">
+          <option value="all">All items</option>
+          @for (category of categories; track category.id) {
+            <option [value]="category.id">{{ category.name }}</option>
+          }
+        </select>
+        <button type="button" class="btn-gold" (click)="newItem()">Add item</button>
+      </div>
+
+      <div class="admin-list">
+        @for (item of visibleItems(); track item.id) {
+          <div class="admin-row">
+            <div>
+              <strong>{{ item.name }}</strong>
+              <div class="muted">{{ item.categoryId }} · Rs. {{ item.price }}</div>
+            </div>
+            <div class="row-actions">
+              <button type="button" class="btn-ghost" (click)="editItem(item)">Edit</button>
+              <button type="button" class="btn-ghost" (click)="removeItem(item.id)">Delete</button>
+            </div>
+          </div>
+        }
+      </div>
+
+      @if (draft) {
+        <form class="form-grid editor" style="margin-top:12px;" (ngSubmit)="saveItem()">
+          <h2 style="font-size:36px;">{{ draft.name || 'New item' }}</h2>
+          <label>Name<input name="iname" [(ngModel)]="draft.name" required></label>
+          <label>Description<textarea name="idesc" [(ngModel)]="draft.description"></textarea></label>
+          <label>Section
+            <select name="icat" [(ngModel)]="draft.categoryId">
+              @for (category of categories; track category.id) {
+                <option [value]="category.id">{{ category.name }}</option>
+              }
+            </select>
+          </label>
+          <label>Price (single items, or the starting price)<input type="number" name="iprice" [(ngModel)]="draft.price"></label>
+          <label>Type
+            <select name="ikind" [ngModel]="draft.kind" (ngModelChange)="kindChanged($event)">
+              <option value="simple">Simple, direct add to cart</option>
+              <option value="pizza">Pizza, crust then size then toppings</option>
+              <option value="sized">Sized, like pasta</option>
+            </select>
+          </label>
+          <label>Popular<input type="checkbox" name="ipop" [(ngModel)]="draft.popular"></label>
+          <label>Photo<input type="file" accept="image/*" (change)="itemImage($event)"></label>
+          @if (draft.image) { <img [src]="draft.image" alt="" style="height:120px; width:180px; object-fit:cover; border-radius:12px;"> }
+          @if (draft.kind !== 'simple') {
+            <div class="admin-list">
+              @for (size of draft.sizes; track size.id; let i = $index) {
+                <div class="admin-row">
+                  <input [(ngModel)]="size.name" [name]="'sn' + i" placeholder="Size">
+                  <input type="number" [(ngModel)]="size.price" [name]="'sp' + i" placeholder="Price">
+                  <button type="button" class="btn-ghost" (click)="removeSize(i)">Remove</button>
+                </div>
+              }
+              <button type="button" class="btn-ghost" (click)="addSize()">Add size</button>
+            </div>
+          }
+          <button class="btn-gold" type="submit">Save item</button>
+        </form>
+      }
+    }
+
+    @if (tab() === 'banners') {
+      <div class="panel form-grid">
+        <label>Show deal popup when the site opens
+          <input type="checkbox" name="splashOn" [(ngModel)]="shop.splashEnabled">
+        </label>
+        <label>Popup image<input type="file" accept="image/*" (change)="splashImage($event)"></label>
+        @if (shop.splashImage) { <img [src]="shop.splashImage" alt="" style="max-height:180px; border-radius:12px;"> }
+        @for (banner of banners; track banner.id; let i = $index) {
+          <div class="editor form-grid">
+            <label>Kicker<input [(ngModel)]="banner.kicker" [name]="'bk' + i"></label>
+            <label>Title<input [(ngModel)]="banner.title" [name]="'bt' + i"></label>
+            <label>Subtitle<input [(ngModel)]="banner.subtitle" [name]="'bs' + i"></label>
+            <label>Show title over the photo<input type="checkbox" [(ngModel)]="banner.showText" [name]="'bw' + i"></label>
+            <label>Image<input type="file" accept="image/*" (change)="bannerImage($event, banner)"></label>
+            @if (banner.image) { <img [src]="banner.image" alt="" style="height:90px; width:160px; object-fit:cover; border-radius:10px;"> }
+            <div class="row-actions">
+              <button type="button" class="btn-ghost" (click)="moveBanner(i, -1)">Up</button>
+              <button type="button" class="btn-ghost" (click)="moveBanner(i, 1)">Down</button>
+              <button type="button" class="btn-ghost" (click)="removeBanner(i)">Remove</button>
+            </div>
+          </div>
+        }
+        <button type="button" class="btn-ghost" (click)="addBanner()">Add banner</button>
+        <h2 style="font-size:36px;">Social cards</h2>
+        @for (post of posts; track post.id; let i = $index) {
+          <div class="editor form-grid">
+            <label>Caption<input [(ngModel)]="post.caption" [name]="'pc' + i"></label>
+            <label>Link<input [(ngModel)]="post.url" [name]="'pu' + i"></label>
+            <label>Image<input type="file" accept="image/*" (change)="postImage($event, post)"></label>
+            <button type="button" class="btn-ghost" (click)="removePost(i)">Remove</button>
+          </div>
+        }
+        <button type="button" class="btn-ghost" (click)="addPost()">Add social card</button>
+        <button type="button" class="btn-gold" (click)="saveBanners()">Save banners and popup</button>
+      </div>
+    }
+
+    @if (tab() === 'options') {
+      <div class="panel">
+        <p class="hint">Foodpanda does not list crust and topping extras. These prices are yours to set. Zero means included.</p>
+        <h2 style="font-size:36px;">Crusts</h2>
+        @for (crust of crusts; track crust.id; let i = $index) {
+          <div class="admin-row">
+            <input [(ngModel)]="crust.name" [name]="'crn' + i">
+            <input type="number" [(ngModel)]="crust.price" [name]="'crp' + i">
+            <button type="button" class="btn-ghost" (click)="removeCrust(i)">Remove</button>
+          </div>
+        }
+        <button type="button" class="btn-ghost" (click)="addExtra('crusts')">Add crust</button>
+        <h2 style="font-size:36px;">Toppings</h2>
+        @for (topping of toppings; track topping.id; let i = $index) {
+          <div class="admin-row">
+            <input [(ngModel)]="topping.name" [name]="'tn' + i">
+            <input type="number" [(ngModel)]="topping.price" [name]="'tp' + i">
+            <button type="button" class="btn-ghost" (click)="removeTopping(i)">Remove</button>
+          </div>
+        }
+        <button type="button" class="btn-ghost" (click)="addExtra('toppings')">Add topping</button>
+        <button type="button" class="btn-gold" (click)="saveOptions()">Save crusts and toppings</button>
+      </div>
+    }
+
+    @if (tab() === 'backup') {
+      <div class="panel form-grid">
+        <p>Download the JSON dump, replace <code>public/data/store.json</code>, then upload the site to Netlify.</p>
+        <button type="button" class="btn-gold" (click)="download()">Download backup</button>
+        <label>Upload a backup<input type="file" accept="application/json,.json" (change)="onDump($event)"></label>
+        <button type="button" class="btn-ghost" (click)="resetFile()">Load the deployed file again</button>
+      </div>
+    }
+  </div>
+}

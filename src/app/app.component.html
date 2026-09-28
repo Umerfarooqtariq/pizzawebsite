@@ -1,0 +1,32 @@
+@if (!store.data() && !store.error()) {
+  <div class="boot">
+    <img src="/images/logo.png" alt="Pizza Crunch">
+    <p>Firing up the oven...</p>
+  </div>
+}
+@if (store.error()) {
+  <div class="error-box"><p>{{ store.error() }}</p></div>
+}
+@if (store.data(); as data) {
+  <div class="shell" [class.blurred]="splash()">
+    <app-header />
+    <main><router-outlet /></main>
+    <app-footer />
+    <app-bottom-nav />
+  </div>
+  @if (splash()) {
+    <div class="splash">
+      <div class="splash-card">
+        <button type="button" class="splash-x" (click)="closeSplash()" aria-label="Close deal">×</button>
+        <img [src]="data.settings.splashImage" alt="Today's deal">
+      </div>
+    </div>
+  }
+  @if (!splash()) {
+    <a class="wa-fab" [href]="'https://wa.me/' + data.settings.whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+  }
+  <app-cart-drawer />
+  <app-item-modal />
+}
+<app-toasts />
+<button type="button" class="to-top" [class.show]="scrolled()" (click)="top()" aria-label="Back to top">↑</button>

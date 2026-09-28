@@ -1,0 +1,106 @@
+@if (modal.state()) {
+  @if (store.data(); as data) {
+    <div class="modal-back" (click)="modal.close()">
+      <div class="modal" (click)="$event.stopPropagation()" role="dialog" aria-modal="true" [attr.aria-label]="title()">
+        <button type="button" class="splash-x" (click)="modal.close()" aria-label="Close">×</button>
+        <div class="modal-grid">
+          <img class="modal-photo" [src]="photo()" [alt]="title()">
+          <div class="modal-body">
+            <p class="kicker">{{ mode() === 'builder' ? 'Your pizza, your rules' : data.settings.name }}</p>
+            <h2>{{ title() }}</h2>
+            @if (flavor()?.description && mode() !== 'builder') {
+              <p class="hint">{{ flavor()?.description }}</p>
+            }
+            <div class="steps">
+              @if (mode() === 'pizza' || mode() === 'builder') {
+                <span class="step-pill" [class.on]="!crustId()">1 Crust</span>
+              }
+              @if (mode() === 'builder') {
+                <span class="step-pill" [class.on]="!!crustId() && !flavorId()">2 Flavour</span>
+              }
+              @if (mode() !== 'simple') {
+                <span class="step-pill" [class.on]="sizeStepOn()">Size</span>
+              }
+              @if (mode() === 'pizza' || mode() === 'builder') {
+                <span class="step-pill" [class.on]="!!sizeId()">Toppings</span>
+              }
+            </div>
+
+            @if ((mode() === 'pizza' || mode() === 'builder')) {
+              <h3 style="font-family:var(--font); letter-spacing:0; font-size:16px;">Crust</h3>
+              <div class="opt-list">
+                @for (crust of data.crusts; track crust.id) {
+                  <button type="button" class="opt" [class.on]="crustId() === crust.id" (click)="pickCrust(crust.id)">
+                    <span>{{ crust.name }}</span>
+                    <small>{{ crustLabel(crust) }}</small>
+                  </button>
+                }
+              </div>
+            }
+
+            @if (mode() === 'builder' && crustId()) {
+              <h3 style="font-family:var(--font); letter-spacing:0; font-size:16px;">Flavour</h3>
+              <div class="opt-list">
+                @for (pizza of pizzas(); track pizza.id) {
+                  <button type="button" class="opt" [class.on]="flavorId() === pizza.id" (click)="pickFlavor(pizza.id)">
+                    <span>{{ pizza.name }}</span>
+                    <small>from {{ money(pizza.price) }}</small>
+                  </button>
+                }
+              </div>
+            }
+
+            @if (showSizes()) {
+              <h3 style="font-family:var(--font); letter-spacing:0; font-size:16px;">Size</h3>
+              <div class="opt-list">
+                @for (size of flavor()?.sizes || []; track size.id) {
+                  <button type="button" class="opt" [class.on]="sizeId() === size.id" (click)="pickSize(size.id)">
+                    <span>{{ size.name }}</span>
+                    <small>
+                      {{ now(size.price) | rs }}
+                      @if (store.percent() > 0) { <s class="was"> {{ size.price | rs }}</s> }
+                    </small>
+                  </button>
+                }
+              </div>
+            }
+
+            @if (showToppings() || (mode() === 'sized' && sizeId())) {
+              <h3 style="font-family:var(--font); letter-spacing:0; font-size:16px;">{{ mode() === 'sized' ? 'Note' : 'Extra toppings' }}</h3>
+              @if (showToppings()) {
+              <div class="opt-list">
+                @for (topping of data.toppings; track topping.id) {
+                  <button type="button" class="opt" [class.on]="toppingOn(topping.id)" (click)="toggleTopping(topping.id)">
+                    <span>{{ topping.name }}</span>
+                    <small>{{ topping.price ? '+' + money(topping.price) : 'Included' }}</small>
+                  </button>
+                }
+              </div>
+              }
+              <label>
+                Special request
+                <textarea [value]="note()" (input)="onNote($event)" maxlength="150" placeholder="No onion, extra spicy..."></textarea>
+                <span class="note-count">{{ note().length }}/150</span>
+              </label>
+            }
+          </div>
+        </div>
+        <div class="modal-bar">
+          <div class="qty">
+            <button type="button" (click)="qty.set(qty() > 1 ? qty() - 1 : 1)">−</button>
+            <span>{{ qty() }}</span>
+            <button type="button" (click)="qty.set(qty() + 1)">+</button>
+          </div>
+          <div>
+            @if (store.percent() > 0 && base()) {
+              <s class="was">{{ (base() * qty()) | rs }}</s>
+            }
+            <div class="total-lg">{{ (now(base()) * qty()) | rs }}</div>
+            @if (hint()) { <p class="hint">{{ hint() }}</p> }
+          </div>
+          <button type="button" class="btn-gold" [disabled]="!ready()" (click)="add()">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  }
+}

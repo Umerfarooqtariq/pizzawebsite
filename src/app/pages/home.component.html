@@ -1,0 +1,84 @@
+@if (store.data(); as data) {
+  <div class="chips">
+    @for (category of categories(); track category.id) {
+      <button type="button" class="chip" [class.on]="store.activeSection() === category.id" (click)="scrollTo(category.id)">
+        {{ category.name }}
+      </button>
+    }
+  </div>
+
+  @if (banners().length) {
+    <section class="hero" (mouseenter)="pause()" (mouseleave)="resume()" (touchstart)="pause()" (touchend)="resume()">
+      @for (banner of banners(); track banner.id; let i = $index) {
+        <img class="hero-img" [class.show]="index() === i" [src]="banner.image" [alt]="banner.title">
+      }
+      <div class="hero-scrim"></div>
+      @if (banners()[index()].showText) {
+        <div class="hero-copy">
+          <p class="kicker">{{ banners()[index()].kicker }}</p>
+          <h1>{{ banners()[index()].title }}</h1>
+          <p>{{ banners()[index()].subtitle }}</p>
+        </div>
+      }
+      <button type="button" class="hero-nav prev" (click)="go(-1, true)" aria-label="Previous banner">‹</button>
+      <button type="button" class="hero-nav next" (click)="go(1, true)" aria-label="Next banner">›</button>
+      <div class="dots">
+        @for (banner of banners(); track banner.id; let i = $index) {
+          <button type="button" class="dot" [class.on]="index() === i" (click)="jump(i)" [attr.aria-label]="'Banner ' + (i + 1)"></button>
+        }
+      </div>
+    </section>
+  }
+
+  @for (category of categories(); track category.id) {
+    <section class="section" [id]="category.id">
+      <header class="sec-head" appReveal>
+        <p class="kicker">{{ category.kicker }}</p>
+        <h2>{{ category.title }}</h2>
+        <p>{{ category.subtitle }}</p>
+      </header>
+
+      @if (category.id === 'pizza') {
+        <div class="builder" appReveal>
+          <div>
+            <p class="kicker">Build it</p>
+            <h3>Create Your Own Pizza</h3>
+            <p>Crust, flavour, size, then toppings. The total updates before it hits the tray.</p>
+            <button type="button" class="builder-btn" (click)="modal.openBuilder()">Create Your Own Pizza</button>
+          </div>
+          <img src="/images/crown.jpg" alt="Crown crust pizza">
+        </div>
+      }
+
+      <div class="grid">
+        @for (item of items(category.id); track item.id) {
+          <app-product-card [item]="item" />
+        }
+      </div>
+    </section>
+  }
+
+  <section class="social" id="social">
+    <header class="sec-head">
+      <p class="kicker">{{ data.settings.followers }} · {{ data.settings.following }}</p>
+      <h2>On our pages</h2>
+      <p>{{ data.settings.bio }}</p>
+    </header>
+    <div class="social-links">
+      <a [href]="data.settings.instagram" target="_blank" rel="noopener"><strong>Instagram</strong><span>pizzacrunchrwp</span></a>
+      <a [href]="data.settings.facebook" target="_blank" rel="noopener"><strong>Facebook</strong><span>Pizza Crunch Rwp</span></a>
+      <a [href]="data.settings.tiktok" target="_blank" rel="noopener"><strong>TikTok</strong><span>pizzacrunch</span></a>
+      <a [href]="data.settings.foodpanda" target="_blank" rel="noopener"><strong>foodpanda</strong><span>Order delivery</span></a>
+    </div>
+    <div class="ticker">
+      <div class="ticker-track">
+        @for (post of marquee(); track post.key) {
+          <a class="post" [href]="post.url" target="_blank" rel="noopener">
+            <img [src]="post.image" [alt]="post.caption">
+            <span>{{ post.caption }}</span>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+}
