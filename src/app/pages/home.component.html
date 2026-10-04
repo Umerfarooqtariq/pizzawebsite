@@ -10,10 +10,13 @@
   @if (banners().length) {
     <section class="hero" (mouseenter)="pause()" (mouseleave)="resume()" (touchstart)="pause()" (touchend)="resume()">
       @for (banner of banners(); track banner.id; let i = $index) {
-        <img class="hero-img" [class.show]="index() === i" [src]="banner.image" [alt]="banner.title">
+        <div class="hero-slide" [class.show]="index() === i">
+          <img class="hero-fill" [src]="banner.image" alt="">
+          <img class="hero-img" [src]="banner.image" [alt]="banner.title">
+        </div>
       }
-      <div class="hero-scrim"></div>
       @if (banners()[index()].showText) {
+        <div class="hero-scrim"></div>
         <div class="hero-copy">
           <p class="kicker">{{ banners()[index()].kicker }}</p>
           <h1>{{ banners()[index()].title }}</h1>

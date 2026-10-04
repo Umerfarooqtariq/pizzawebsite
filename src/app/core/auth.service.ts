@@ -3,7 +3,6 @@ import { sha256 } from './pricing';
 import { StoreService } from './store.service';
 
 const SESSION = 'pizzacrunch.session';
-const LOCK = 'pizzacrunch.lock';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -17,26 +16,14 @@ export class AuthService {
   }
 
   async login(username: string, password: string): Promise<string> {
-    const lock = this.lockLeft();
-    if (lock > 0) return `Try again in ${lock} seconds.`;
     const settings = this.store.data()?.settings;
-    if (!settings) return 'Menu is still loading.';
+    if (!settings?.adminUserHash || !settings?.adminPassHash) return 'Staff login is not set on this site yet.';
     const [userHash, passHash] = await Promise.all([
       sha256(username.trim()),
       sha256(password)
     ]);
     const ok = userHash === settings.adminUserHash && passHash === settings.adminPassHash;
-    if (!ok) {
-      const fails = this.bumpFails();
-      if (fails >= 6) {
-        sessionStorage.setItem(LOCK, String(Date.now() + 60_000));
-        sessionStorage.removeItem('pizzacrunch.fails');
-        return 'Too many tries. Wait a minute.';
-      }
-      return 'Wrong username or password.';
-    }
-    sessionStorage.removeItem('pizzacrunch.fails');
-    sessionStorage.removeItem(LOCK);
+    if (!ok) return 'Wrong username or password.';
     sessionStorage.setItem(SESSION, String(Date.now() + 12 * 60 * 60 * 1000));
     this.loggedIn.set(true);
     return '';
@@ -57,17 +44,4 @@ export class AuthService {
     return true;
   }
 
-  private bumpFails(): number {
-    const next = Number(sessionStorage.getItem('pizzacrunch.fails') || 0) + 1;
-    sessionStorage.setItem('pizzacrunch.fails', String(next));
-    return next;
-  }
-
-  private lockLeft(): number {
-    const until = Number(sessionStorage.getItem(LOCK) || 0);
-    const left = Math.ceil((until - Date.now()) / 1000);
-    if (left > 0) return left;
-    sessionStorage.removeItem(LOCK);
-    return 0;
-  }
 }

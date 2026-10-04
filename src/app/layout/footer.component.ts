@@ -40,7 +40,7 @@ import { StoreService } from '../core/store.service';
         </div>
         <div class="legal">
           <span>© {{ year }} {{ data.settings.name }}.</span>
-          <a class="staff" routerLink="/admin">Staff</a>
+          <a class="staff" routerLink="/admin/login">Login</a>
         </div>
       </footer>
     }

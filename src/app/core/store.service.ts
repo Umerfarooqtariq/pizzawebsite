@@ -43,7 +43,10 @@ export class StoreService {
       if (saved) {
         const parsed: unknown = JSON.parse(saved);
         if (isStore(parsed)) {
-          this.data.set(normalize(parsed));
+          const local = normalize(parsed);
+          if (!local.settings.adminUserHash) local.settings.adminUserHash = remote.settings.adminUserHash;
+          if (!local.settings.adminPassHash) local.settings.adminPassHash = remote.settings.adminPassHash;
+          this.data.set(local);
           this.override.set(true);
           this.error.set('');
           return;
